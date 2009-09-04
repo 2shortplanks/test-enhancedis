@@ -12,12 +12,14 @@ use List::Util qw(min);
 
 use Test::Builder;
 
-# remember the original code.  Note the BEGIN { } here - this is because
+# remember the original subroutine.  Note the BEGIN { } here - this is because
 # without it this code will be run after the sub Test::Builder::_is_diag
 # has been declared and we'll grab a ref to the wrong subroutine
 my $uboat;
 BEGIN { $uboat = \&Test::Builder::_is_diag }; ## no critic (ProtectPrivateVars)
 
+# now write a new subroutine, overriding the subroutine in another package
+# don't try this at home kids.
 sub Test::Builder::_is_diag { ## no critic (ProtectPrivateSubs)
   my( $self, $got, $type, $expect ) = @_;
 

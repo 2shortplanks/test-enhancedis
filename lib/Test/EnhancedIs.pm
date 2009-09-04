@@ -51,9 +51,6 @@ Test::EnhancedIs - show where things differ with Test::Builder
   # Run your tests like so:
   perl -Ilib -MTest::EnhancedIs t/test.t
 
-  # or like this
-  prove -l -MTest::EnhancedIs t/test.t
-
   # this will print out a red backgrounded astrix before the second o
   use Test::More tests => 1;
   is("fooo","foao");

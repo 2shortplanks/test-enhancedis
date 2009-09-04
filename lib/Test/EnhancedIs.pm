@@ -2,10 +2,10 @@ package Test::EnhancedIs;
 use base qw(Devel::UseFromCommandLineOnly);
 
 use strict;
-#use warnings;
+use warnings;
+no warnings "redefine"; ## no critic (ProhibitNoWarnings)
 
-use vars qw($VERSION);
-$VERSION = 0.00_01;
+our $VERSION = 0.00_01;
 
 use Term::ANSIColor qw(colored);
 use List::Util qw(min);
